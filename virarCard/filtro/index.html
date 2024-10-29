@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="itens ">
+        <div class="itens">
+            <p class="item grupo1">aaaaaaaaaaaaaaaa</p>
+            <p class="item grupo2">bbbbbbbbbbbb</p>
+            <p class="item grupo3">cccccccccccc</p>
+        </div>
+        <div class="botoes">
+            <button onclick="filtrar('grupo1')"> grupo1</button>
+            <button onclick="filtrar('grupo2')">grupo2</button>
+            <button onclick="filtrar('grupo3')">grupo3</button>
+            <button onclick="filtrar('tudo')">tudo</button>
+        </div>
+    </div>
+    <script>
+        function filtrar(grupo) {
+            const itens = document.querySelectorAll(".item");
+
+            itens.forEach((item)=> {
+                item.classList.remove("oculto");
+
+                if (grupo !== "tudo" && !item.classList.contains(grupo)){
+                    item.classList.add("oculto");
+                }
+            })
+        }
+    </script>
+</body>
+</html>

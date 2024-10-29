@@ -1,0 +1,26 @@
+*{
+    border: 0;
+    padding: 0;
+    margin: 0;
+}
+.card{
+    width: 300px;
+    position: relative;
+}
+.tras{
+    transform: rotateY(180deg);
+}
+.card:hover .frente {
+    transform: rotateY(-180deg);
+}
+.card:hover .tras{
+    transform: rotate(0);
+}
+.lado{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    backface-visibility: hidden;
+    transition: all 0.5s;
+}
