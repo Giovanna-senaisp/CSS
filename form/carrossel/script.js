@@ -4,8 +4,8 @@ const totalSlides = slides.length;
 const intervalo = 5000; //5 segundos
 
 function mostrarSlide(indice){
-    const carrosselSlide = document.querySelector('.carrossel')
-    carrosselSlides.style.trasform = `translateX(-${indice * 100}%)`
+    const carrosselSlides = document.querySelector('.carrossel')
+    carrosselSlides.style.transform = `translateX(-${indice * 100}%)`
 }
 
 function proximo(){
