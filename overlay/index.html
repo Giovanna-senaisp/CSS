@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Overlay Effect</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Trigger Divs -->
+        <div class="trigger" data-target="overlay1">Clique na Div 1</div>
+        <div class="trigger" data-target="overlay2">Clique na Div 2</div>
+        <div class="trigger" data-target="overlay3">Clique na Div 3</div>
+    </div>
+
+    <!-- Overlays -->
+    <div id="overlay1" class="overlay">
+        <div class="modal">
+            <p>Conteúdo da Div 1</p>
+        </div>
+    </div>
+
+    <div id="overlay2" class="overlay">
+        <div class="modal">
+            <p>Conteúdo da Div 2</p>
+        </div>
+    </div>
+
+    <div id="overlay3" class="overlay">
+        <div class="modal">
+            <p>Conteúdo da Div 3</p>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+    const triggers = document.querySelectorAll('.trigger');
+    const overlays = document.querySelectorAll('.overlay');
+
+    // Abrir overlay
+    triggers.forEach(trigger => {
+        trigger.addEventListener('click', () => {
+            const targetId = trigger.dataset.target;
+            const overlay = document.getElementById(targetId);
+            overlay.classList.add('active');
+        });
+    });
+
+    // Fechar overlay ao clicar fora da modal
+    overlays.forEach(overlay => {
+        overlay.addEventListener('click', (e) => {
+            if (e.target === overlay) {
+                overlay.classList.remove('active');
+            }
+        });
+    });
+});
+
+    </script>
+</body>
+</html>
